@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ClubConnect — Connect. Participate. Belong.</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="#"><span class="brand-mark">C</span><span>Club<span class="brand-accent">Connect</span><small>STUDENT ORGANIZATIONS PORTAL</small></span></a>
+    <nav id="nav" class="nav"></nav>
+    <div class="topbar-actions"><div id="account" class="account"></div><button id="logout-btn" class="btn logout-btn hidden" type="button">Log out</button></div>
+  </header>
+
+  <main>
+    <section id="auth-view" class="auth-layout">
+      <div class="hero">
+        <div class="eyebrow"><span class="dot"></span> YOUR CAMPUS, CONNECTED</div>
+        <h1>Find your people.<br><span>Make it count.</span></h1>
+        <p>Find your community. Take part. Stay connected.</p>
+        <div class="hero-points"><div><span class="point-icon">◎</span><span><b>Clubs</b><small>Discover your community.</small></span></div><div><span class="point-icon">▦</span><span><b>Events</b><small>Stay in the loop.</small></span></div><div><span class="point-icon">↗</span><span><b>Attendance</b><small>Keep track of participation.</small></span></div></div>
+      </div>
+      <div class="auth-card">
+        <div class="tabs"><button class="tab active" data-auth-tab="login">Log in</button><button class="tab" data-auth-tab="signup">Create account</button></div>
+        <form id="login-form" class="form">
+          <h2>Welcome back</h2><p class="muted">Log in to your ClubConnect account.</p>
+          <label>Email address<input name="email" type="email" placeholder="Enter your email" required></label>
+          <label>Password<input name="password" type="password" placeholder="Enter password" required></label>
+          <button class="btn primary full" type="submit">Log in <span>→</span></button>
+        </form>
+        <form id="signup-form" class="form hidden">
+          <h2>Create your account</h2><p class="muted">Start connecting with campus life.</p>
+          <label>Full name<input name="fullName" placeholder="Enter your full name" required></label>
+          <label>Email address<input name="email" type="email" placeholder="Enter your email" required></label>
+          <label>Password<input name="password" type="password" minlength="8" placeholder="At least 8 characters" required></label>
+          <button class="btn primary full" type="submit">Create account <span>→</span></button>
+          <p class="tiny">New accounts are created with the Student role.</p>
+        </form>
+        <div id="auth-message" class="message hidden"></div>
+      </div>
+    </section>
+
+    <section id="app-view" class="app-layout hidden">
+      <aside class="sidebar">
+        <div class="side-label">WORKSPACE</div>
+        <button class="side-link active" data-page="overview"><span>⌂</span> Overview</button>
+        <button class="side-link" data-page="clubs"><span>♧</span> Discover clubs</button>
+        <button class="side-link" data-page="events"><span>▦</span> Events</button>
+        <button class="side-link" data-page="memberships"><span>♙</span> Memberships</button>
+        <button class="side-link" data-page="attendance"><span>✓</span> Attendance</button>
+        <button class="side-link hidden" id="role-requests-link" data-page="role-requests"><span>♙</span> Role requests</button>
+        <button class="side-link hidden" id="role-approvals-link" data-page="role-approvals"><span>✓</span> Role approvals</button>
+        <div class="side-bottom"><div class="side-avatar" id="side-avatar">S</div><div><b id="side-name">Student</b><small id="side-role">Student</small></div></div>
+      </aside>
+      <div class="content">
+        <div class="page-heading"><div><p class="eyebrow">CLUBCONNECT / WORKSPACE</p><h1 id="page-title">Overview</h1><p id="page-subtitle" class="muted">Your campus community at a glance.</p></div><button id="refresh-btn" class="btn secondary">↻ Refresh</button></div>
+        <div id="notice" class="message hidden"></div>
+        <div id="page-content"></div>
+      </div>
+    </section>
+  </main>
+  <footer><span>© 2026 ClubConnect · Team OrgSync</span><span>Connect. Participate. Belong.</span></footer>
+  <script src="/app.js"></script>
+</body>
+</html>
